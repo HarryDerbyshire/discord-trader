@@ -1,0 +1,11 @@
+{
+    "name": "discord-trader",
+    "version": "1.0.0",
+    "description": "A Minecraft trading bot for Discord.",
+    "main": "bot.js",
+    "author": "Hawkite",
+    "dependencies": {
+        "discord.js": "^12.4.1",
+        "winston": "^3.3.3"
+    }
+}
