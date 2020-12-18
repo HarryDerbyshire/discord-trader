@@ -1,20 +1,25 @@
 const Discord = require ('discord.js');
 
 module.exports = {
-    name: 'sell',
-    aliases: ['s'],
-    description: 'For selling items for emeralds',
+    name: 'buy',
+    aliases: ['b'],
+    description: 'For showing your interest in a particular item',
     args: true,
     guildOnly: true,
-    usage: '<item> <quantity> <no. 0f emeralds wanted>',
+    usage: '<item> <optional quantity>',
     execute(message, args) {       
         const item = args[0];
-        const quantity = args[1];
-        const price = args[2];
+        let quantity;
+        if (!args[0]) {
+            quantity = args[1];
+        } else {
+            quantity = 'any amount of'
+        }
+        
 
         const tradeEmbed = new Discord.MessageEmbed()
-            .setColor('#009900')
-            .setTitle(`Selling ${quantity} ${item} for ${price} Emeralds`)
+            .setColor('#000099')
+            .setTitle(`Buying ${quantity} ${item}`)
             .setAuthor(message.author.username, message.author.displayAvatarURL({format: "png", dynamic: true}))
  
         message.channel.send(tradeEmbed);
