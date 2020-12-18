@@ -10,7 +10,7 @@ module.exports = {
     execute(message, args) {       
         const item = args[0];
         let quantity;
-        if (!args[0]) {
+        if (args[1]) {
             quantity = args[1];
         } else {
             quantity = 'any amount of'
