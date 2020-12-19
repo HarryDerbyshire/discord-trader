@@ -13,7 +13,7 @@ module.exports = {
         const price = args[2];
 
         const tradeEmbed = new Discord.MessageEmbed()
-            .setColor('#009900')
+            .setColor('#33DBFF')
             .setTitle(`Selling ${quantity} ${item} for ${price} Emeralds`)
             .setAuthor(message.author.username, message.author.displayAvatarURL({format: "png", dynamic: true}))
  

@@ -7,17 +7,28 @@ module.exports = {
     args: true,
     guildOnly: true,
     usage: '<title> <description>',
-    execute(message, args) {       
-        let title = args[0];
-        let description = args[1];
-        const price = args[2];
+    execute(message, args) {
+
+        // let str = args.join(' ');
+        // let splitString = str.match(/\w+|"(?:\\"|[^"])+"/g);
+        // let newString = splitString.join(' ');
+        // newString = splitString.replace('"', '');
+        // console.log(newString);
+        var str = args.join(' ')
+        let splitString = str.match(/\w+|"(?:\\"|[^"])+"/g);
+        const map1 = splitString.map(x => x.replace('"', ''));
+        const map2 = map1.map(x => x.replace('"', ''));
+
+        let title = map2[0];
+        let description = map2[1];
         message.delete();
+
         const tradeEmbed = new Discord.MessageEmbed()
             .setColor('#ffae42')
             .setTitle(`${title}`)
             .setAuthor(message.author.username, message.author.displayAvatarURL({format: "png", dynamic: true}))
-            .addField('Job Description', `${description}`)
- 
+            .setDescription(`${description}`)
+            
         message.channel.send(tradeEmbed);
         
     },

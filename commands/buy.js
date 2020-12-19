@@ -16,13 +16,11 @@ module.exports = {
             quantity = 'any amount of'
         }
         
-
         const tradeEmbed = new Discord.MessageEmbed()
-            .setColor('#000099')
+            .setColor('#C70039')
             .setTitle(`Buying ${quantity} ${item}`)
             .setAuthor(message.author.username, message.author.displayAvatarURL({format: "png", dynamic: true}))
  
-        message.channel.send(tradeEmbed);
-        
+        message.channel.send(tradeEmbed);       
     },
 };
