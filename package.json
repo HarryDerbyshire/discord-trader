@@ -6,6 +6,13 @@
     "author": "Hawkite",
     "dependencies": {
         "discord.js": "^12.4.1",
+        "sequelize": "^6.3.5",
+        "sqlite3": "^5.0.0",
         "winston": "^3.3.3"
+    },
+    "devDependencies": {
+        "eslint": "^7.16.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.22.1"
     }
 }
