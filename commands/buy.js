@@ -1,4 +1,4 @@
-const Discord = require ('discord.js');
+const Discord = require('discord.js');
 
 module.exports = {
     name: 'buy',
@@ -7,20 +7,14 @@ module.exports = {
     args: true,
     guildOnly: true,
     usage: '<item> <optional quantity>',
-    execute(message, args) {       
-        const item = args[0];
-        let quantity;
-        if (args[1]) {
-            quantity = args[1];
-        } else {
-            quantity = 'any amount of'
-        }
-        
+    execute(message, args) {
+        const [item, quantity = 'any amount of'] = args;
+
         const tradeEmbed = new Discord.MessageEmbed()
             .setColor('#C70039')
             .setTitle(`Buying ${quantity} ${item}`)
-            .setAuthor(message.author.username, message.author.displayAvatarURL({format: "png", dynamic: true}))
- 
-        message.channel.send(tradeEmbed);       
+            .setAuthor(message.author.username, message.author.displayAvatarURL({ format: 'png', dynamic: true }));
+
+        message.channel.send(tradeEmbed);
     },
 };
